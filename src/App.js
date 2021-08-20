@@ -51,18 +51,6 @@ export default function App() {
   const orderSubmitted = (newpizza) => {
     return setPizzas(formValues)
   }
-  // const getPizzas = () => {
-  //   axios
-  //     .get("https://reqres.in/api/orders")
-  //     .then((res) => {
-  //       setPizzas(res.data.data);
-  //       console.log(`HERE IS setPizzas`, setPizzas);
-  //     })
-  //     .catch((err) => {
-  //       debugger;
-  //       console.log(err);
-  //     });
-  // };
 
   const postNewPizza = (newPizza) => {
     axios
@@ -111,8 +99,6 @@ export default function App() {
       username: formValues.username.trim(),
       special: formValues.special.trim(),
       size: formValues.size.trim(),
-      // toppings: ["ham", "olives", "onions", "cheese"].filter(
-      //   (tops) => formValues[tops]),
       ham: formValues.ham,
       olives: formValues.olives,
       onions: formValues.onions,
@@ -121,14 +107,8 @@ export default function App() {
     postNewPizza(newPizza);
   }
 
-  // useEffect(() => {
-  //   // getPizzas();
-  // }, [])
-  // useEffect(() => {}, []);
-
   useEffect(() => {
     schema.isValid(formValues).then((valid) => {
-      //  setDisabled(!valid);
     });
   }, [formValues]);
 
@@ -137,14 +117,9 @@ export default function App() {
     <Container>
       <Home
         id="order-pizza"
-      // values={formValues}
-      // update={updateForm}
-      // submit={submitForm}
       />
-      {/* <Link to='/'>HOME</Link> */}
       <Switch>
         <Route path="/pizza/success">
-          {/* Route to Success Page */}
           <Success
             change={inputChange}
             values={formValues}
@@ -152,13 +127,11 @@ export default function App() {
             orders={pizzas}
           />
         </Route>
-        {/* may need exact  */}
         <Route path="/pizza">
           <Form
             values={formValues}
             change={inputChange}
             submit={formSubmit}
-            // disabled={disabled}
             errors={formErrors}
           />
         </Route>
@@ -167,9 +140,6 @@ export default function App() {
           <Pic pic={url} />
         </Route>
       </Switch>
-      {/* {pizzas.map((user) => {
-        return <Pizza key={user.id} details={user} />;
-      })} */}
     </Container>
   );
 

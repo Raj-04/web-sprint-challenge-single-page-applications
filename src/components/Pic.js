@@ -13,7 +13,6 @@ export default function Pic(props){
     return (
 
         <div>
-            {/* <img src="https://buff.ly/2UybmBQ" alt="pizza pie"></img> */}
             <Image src={pic} alt="Pizza Photo"/>
         </div>
 
