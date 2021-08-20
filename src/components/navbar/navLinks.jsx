@@ -34,7 +34,7 @@ const LinkItem = styled.li`
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
-  font-size: inherit;
+  font-size: 20px;
 `;
 
 export function NavLinks(props) {
@@ -45,7 +45,7 @@ export function NavLinks(props) {
           <Link href="#">About us</Link>
         </LinkItem>
         <LinkItem>
-          <Link href="#">Create Pizza</Link>
+          <Link href="/pizza" id="order-pizza">Order Pizza</Link>
         </LinkItem>
         <LinkItem>
           <Link href="#">Tracker</Link>

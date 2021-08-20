@@ -29,7 +29,7 @@ const RightSection = styled.div`
     display: flex;
 `;
 
-export function NavBar(props) {
+export default function NavBar(props) {
     return <NavBarContainer>
         <LeftSection>
             <Logo />
